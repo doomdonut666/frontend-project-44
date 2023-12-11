@@ -2,9 +2,13 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Maybe it won't be so bad",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
   },
   "author": "doomdonut666",
   "license": "ISC"
