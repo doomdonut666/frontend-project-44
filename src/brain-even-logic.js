@@ -1,23 +1,35 @@
 import _ from 'lodash';
-import readlineSync from 'readline-sync';
-import evenCheckAnswer from './engine.js';
+import {
+  checkAnswer, askQuestion, getAnswer, checkCorrect, printCongratulations,
+} from './engine.js';
+import getName from './cli.js';
+
+const checkEvenOrNot = (number) => {
+  const result = number % 2 === 0 ? 'yes' : 'no';
+  return result;
+};
 
 const launchBrainEven = () => {
-  let exit = false;
+  const name = getName();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  while (exit === false) {
+  for (let i = 0; i < 3; i += 1) {
     const randomNumber = _.random(1, 50);
-    const answer = readlineSync.question(`Question: ${randomNumber} `);
-    const correctAnswer = evenCheckAnswer(randomNumber);
+    askQuestion(randomNumber);
+    const answer = getAnswer('string');
+    // const answer = readlineSync.question(`Question: ${randomNumber} `);
+    const correctAnswer = checkEvenOrNot(randomNumber);
 
-    const checkAnswer = answer === correctAnswer;
+    const checkedAnswer = checkAnswer(answer, correctAnswer);
 
-    if (checkAnswer === false) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      exit = true;
+    const check = checkCorrect(checkedAnswer, answer, correctAnswer, name);
+    if (check === false) {
+      return 0;
     }
   }
+
+  printCongratulations();
+  return 0;
 };
 
 export default launchBrainEven;
