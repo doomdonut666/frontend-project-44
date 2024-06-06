@@ -48,7 +48,7 @@ const launchBrainCalc = () => {
     }
   }
 
-  printCongratulations();
+  printCongratulations(name);
   return 0;
 };
 

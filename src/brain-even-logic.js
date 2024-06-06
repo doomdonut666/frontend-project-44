@@ -17,7 +17,6 @@ const launchBrainEven = () => {
     const randomNumber = _.random(1, 50);
     askQuestion(randomNumber);
     const answer = getAnswer('string');
-    // const answer = readlineSync.question(`Question: ${randomNumber} `);
     const correctAnswer = checkEvenOrNot(randomNumber);
 
     const checkedAnswer = checkAnswer(answer, correctAnswer);
@@ -28,7 +27,7 @@ const launchBrainEven = () => {
     }
   }
 
-  printCongratulations();
+  printCongratulations(name);
   return 0;
 };
 

@@ -14,21 +14,21 @@ const getAnswer = (format) => {
 
 const checkAnswer = (userAnswer, rightAnswer) => userAnswer === rightAnswer;
 
+const printCongratulations = (name) => {
+  console.log(`Congratulations, ${name}!`);
+};
+
 const checkCorrect = (checked, userAnswer, rightAnswer, name) => {
   let win = true;
   if (checked === true) {
     console.log('Correct!');
   } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}.'`);
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
     console.log(`Let's try again, ${name}!`);
     win = false;
   }
 
   return win;
-};
-
-const printCongratulations = () => {
-  console.log('Congratulations!');
 };
 
 export {
