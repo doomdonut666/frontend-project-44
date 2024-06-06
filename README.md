@@ -9,3 +9,5 @@
 2. [brain-calc asciinema](https://asciinema.org/a/nmKxtao6HUodQ5qYR1lMtw0Th)
 
 3. [brain-gcd asciinema](https://asciinema.org/a/R0V9XX5Ni0WxRsW0JMcmbtt2x)
+
+4. [brain-progression asciinema](https://asciinema.org/a/8dNttH11E9mdIo14vkCyw3yJI)
